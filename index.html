@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #header {
+      background-color: #4e5ac9;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .nav {
+      padding-right: 20px;
+    }
+
+    .nav ul li{
+      display:inline;
+      padding:0 10px
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap
+    }
+
+    .barra {
+      padding: 10px;
+      margin:5px;
+      background: rgb(31, 32, 32);
+      flex:3;
+      border-radius:10px;
+      display:flex;
+      flex-flow:column;
+      align-items:center;
+    }
+
+    .contenido {
+      padding: 10px;
+      border-radius:10px;
+      background: rgb(73, 119, 180);
+      margin:5px;
+      flex:1 150px;
+    }
+
+    .subcontenido2 {
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    #resultado {
+      display:flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      align-items: center;
+    }
+    
+    #footer {
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display:flex;
+      flex-flow:row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #galeria{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap; 
+      height:100px;
+    }
+
+    .proyecto{
+      
+      height:150px;
+      max-width:150px;
+      background-color:rgb(255, 255, 255);
+      border-radius:10px;
+      margin:10px;
+      flex:1 100px;
+    }
+
+    .barra a {
+      display:block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      background-image: url('mate.jpeg');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    #hotspot1 {
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/sol.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot2 {
+    position: absolute;
+    top: 220px;  
+    left: 250px; 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/mercurio.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot3 {
+    position: absolute;
+    top: 180px; 
+    left: 170px; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/venus.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot4 {
+    position: absolute;
+    top: 250px; 
+    left: 90px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/tierra.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot5 {
+    position: absolute;
+    top: 180px;  
+    left: 300px; 
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/marte.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot6 {
+    position: absolute;
+    top: 220px;  
+    left: 370px; 
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/jupiter.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot7 {
+    position: absolute;
+    top: 340px; 
+    left: 300px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/saturno.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot8 {
+    position: absolute;
+    top: 500px;  
+    left: 30px; 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/urano.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot9 {
+    position: absolute;
+    top: 0px;
+    left: 0px; 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('img/neptuno.gif');
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    #instrucciones {
+      flex:1;
+      cursor: pointer;
+    }
+
+    #prueba {
+      flex:1;
+      cursor:pointer;
+    }
+
+    .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
+    }
+   
+    #form-button-container {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      z-index: 9999;
+    }
+    #btn-form{
+      display:inline-block;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #btn-form:hover{
+      background: #ff4c4c;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "CIRCUNFERENCIA"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1" ><span class="text-hotspot">sol</span></div>
+          <div id="hotspot2" ><span class="text-hotspot">1</span></div>
+          <div id="hotspot3" ><span class="text-hotspot">2</span></div>
+          <div id="hotspot4" ><span class="text-hotspot" >3</span></div>
+          <div id="hotspot5" ><span class="text-hotspot">4</span></div>
+          <div id="hotspot6" ><span class="text-hotspot">5</span></div>
+          <div id="hotspot7" ><span class="text-hotspot">6</span></div>
+          <div id="hotspot8" class="hotspot-zoom"><span class="text-hotspot" >7</span></div>
+          <div id="hotspot9" class="hotspot-zoom"><span class="text-hotspot" >8</span></div>
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz click en cada uno de los pasos para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="img/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/5</span>
+        <img id="imagen-resultado" width="200px" src="img/ping.gif"  style="display:none;"/>
+         
+      <a id="btn-form" href="form.php" role="button">Libro de visitas</a>
+  
+      </div>      
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="img/instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="img/test.png" /></div>
+   
+  </div>
+  <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+    document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Sol';
+      document.getElementById('texto-info').textContent = '';
+      document.getElementById('imagen-info').setAttribute('src', '');    
+    };
+
+      document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Sol';
+      document.getElementById('texto-info').textContent = '';
+      document.getElementById('imagen-info').setAttribute('src', 'espacio.png');    
+    };
+
+   
+    
+
+    document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/hotspot-cursor.png');
+    };
+
+    document.getElementById('prueba').onclick = function(){
+      alert("Bienvenidos a la prueba de conocimientos");
+      alert("Responde correctamente todas las preguntas para ganar con v/f");
+
+      let puntaje = 0;
+
+if(pregunta1 = prompt("¿El Sol está compuesto principalmente de hidrógeno y helio?")) {
+    pregunta1 = pregunta1.trim();
+}
+
+if (pregunta1.toLowerCase() === "v") {
+    alert("¡Correcto! El Sol está compuesto principalmente de hidrógeno y helio.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta2 = prompt("¿Mercurio tiene una atmósfera densa compuesta principalmente de dióxido de carbono?")) {
+    pregunta2 = pregunta2.trim();
+}
+
+if (pregunta2.toLowerCase() === "f") {
+    alert("¡Correcto! Mercurio no tiene una atmósfera significativa.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: falso.");
+}
+
+if(pregunta3 = prompt("¿Venus tiene una rotación retrógrada, lo que significa que gira en sentido contrario al de la mayoría de los planetas?")) {
+    pregunta3 = pregunta3.trim();
+}
+
+if (pregunta3.toLowerCase() === "v") {
+    alert("¡Correcto! Venus tiene una rotación retrógrada.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+if(pregunta4 = prompt("¿La Tierra tiene más de un satélite natural, siendo la Luna el más grande?")) {
+    pregunta4 = pregunta4.trim();
+}
+
+if (pregunta4.toLowerCase() === "f") {
+    alert("¡Correcto! La Tierra solo tiene un satélite natural, la Luna.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: falso.");
+}
+
+if(pregunta5 = prompt("¿Marte tiene una atmósfera densa compuesta principalmente de dióxido de carbono?")) {
+    pregunta5 = pregunta5.trim();
+}
+
+if (pregunta5.toLowerCase() === "v") {
+    alert("¡Correcto! Marte tiene una atmósfera delgada, pero compuesta principalmente de dióxido de carbono.");
+    puntaje += 1;
+} else {
+    alert("Incorrecto. La respuesta correcta es: verdadero.");
+}
+
+
+
+if(puntaje >= 1) {
+    alert("¡Felicidades! Has respondido correctamente " + puntaje + " preguntas.");
+    document.getElementById("calif").textContent = puntaje + "/10";
+    document.getElementById("imagen-resultado").style.display = "block";
+    document.getElementById("resultado").setAttribute("class", "visible");  
+} else {
+    alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
+}
+
+    };
+  </script>
+    Diego Fernando Rojas Ortiz.
+    <br>
+    Anel Regina Soto Nieves.
+    <br>
+    Vanessa Ayala Díaz 
+</body>
