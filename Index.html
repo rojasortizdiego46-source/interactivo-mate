@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #header {
+      background-color: #4e5ac9;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .nav {
+      padding-right: 20px;
+    }
+
+    .nav ul li{
+      display:inline;
+      padding:0 10px
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap
+    }
+
+    .barra {
+      padding: 10px;
+      margin:5px;
+      background: rgba(18, 72, 153, 0.503);
+      flex:3;
+      border-radius:10px;
+      display:flex;
+      flex-flow:column;
+      align-items:center;
+    }
+
+    .contenido {
+      padding: 10px;
+      border-radius:10px;
+      background: rgb(73, 119, 180);
+      margin:5px;
+      flex:1 150px;
+    }
+
+    .subcontenido2 {
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    #resultado{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+#calif{
+    font-size:60px;
+    color:#4e5ac9;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+    
+    #footer {
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display:flex;
+      flex-flow:row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #galeria{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap; 
+      height:100px;
+    }
+
+    .proyecto{
+      
+      height:150px;
+      max-width:150px;
+      background-color:rgb(255, 255, 255);
+      border-radius:10px;
+      margin:10px;
+      flex:1 100px;
+    }
+
+    .barra a {
+      display:block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      background-image: url('mate.jpeg');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    #hotspot1 {
+    position: absolute;
+    top:   135px;
+    left: -50px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    margin-left: 70px;
+}
+
+#hotspot2 {
+    position: absolute;
+    top: 185px;
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot3 {
+    position: absolute;
+    top: 240px; 
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot4 {
+    position: absolute;
+    top: 295px; 
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot5 {
+    position: absolute;
+    top: 345px;  
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot6 {
+    position: absolute;
+    top: 395px;  
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot7 {
+    position: absolute;
+    top: 445px; 
+    left: -50px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot8 {
+    position: absolute;
+    top: 500px;  
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #4e5ac9;
+    background-size: cover;
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot9 {
+    position: absolute;
+    top: 550px;
+    left: -50px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+background-color:#4e5ac9;    
+    background-position: center;
+    margin-left: 70px;
+}
+
+#hotspot10 {
+    position: absolute;
+    top: 240px;
+    left: 500px; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+background-color:#030835;    
+    background-position: center;
+    margin-left: 70px;
+}
+
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    #instrucciones {
+      flex:1;
+      cursor: pointer;
+    }
+
+    #prueba {
+      flex:1;
+      cursor:pointer;
+    }
+
+    .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
+    }
+   
+    #form-button-container {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      z-index: 9999;
+    }
+    #btn-form{
+      display:inline-block;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #btn-form:hover{
+      background: #ff4c4c;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "CIRCUNFERENCIA"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1" ><span class="text-hotspot">1</span></div>
+          <div id="hotspot2" ><span class="text-hotspot">2</span></div>
+          <div id="hotspot3" ><span class="text-hotspot">3</span></div>
+          <div id="hotspot4" ><span class="text-hotspot" >4</span></div>
+          <div id="hotspot5" ><span class="text-hotspot">5</span></div>
+          <div id="hotspot6" ><span class="text-hotspot">6</span></div>
+          <div id="hotspot7" ><span class="text-hotspot">7</span></div>
+          <div id="hotspot8" class="hotspot-zoom"><span class="text-hotspot" >8</span></div>
+          <div id="hotspot9" class="hotspot-zoom"><span class="text-hotspot" >9</span></div>
+          <div id="hotspot10" class="hotspot-zoom"><span class="text-hotspot" >10</span></div>
+
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz click en cada uno de los pasos para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="img/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/5</span>
+        <img id="imagen-resultado" width="200px" src="img/ping.gif"  style="display:none;"/>
+      
+    <a id="btn-form" href="video.mp4" target="_blank">🎥 Ver Video de ayuda</a>
+</div>
+  
+      </div>      
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="img/instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="img/test.png" /></div>
+   
+  </div>
+  <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+  
+  document.getElementById('hotspot1').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 1: Uso de la fórmula de distancia';  
+    document.getElementById('texto-info').textContent = 'El radio r es la distancia entre el centro C(h,k) y un punto P(x2,y2) de la circunferencia. Por eso se usa la fórmula de distancia entre dos puntos: r² = (x₂ − x₁)² + (y₂ − y₁)². Se trabaja con r² para evitar usar la raíz desde el inicio.';  
+};
+
+document.getElementById('hotspot2').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 2: Sustitución de valores';  
+    document.getElementById('texto-info').textContent = 'El centro es C(2, −1), por lo tanto x₁ = 2 y y₁ = −1. El punto es P(5, 3), entonces x₂ = 5 y y₂ = 3. Se sustituyen estos valores en la fórmula: r² = (5 − 2)² + (3 − (−1))².';  
+};
+
+document.getElementById('hotspot3').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 3: Resolver las restas';  
+    document.getElementById('texto-info').textContent = 'Se resuelven primero las operaciones dentro de los paréntesis: 5 − 2 = 3 y 3 − (−1) = 3 + 1 = 4. Entonces queda: r² = 3² + 4².';  
+};
+
+document.getElementById('hotspot4').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 4: Elevar al cuadrado';  
+    document.getElementById('texto-info').textContent = 'Ahora se elevan al cuadrado los valores obtenidos: 3² = 9 y 4² = 16. Por lo tanto queda la expresión: r² = 9 + 16.';  
+};
+
+document.getElementById('hotspot5').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 5: Suma del radio al cuadrado';  
+    document.getElementById('texto-info').textContent = 'Se suman los resultados: 9 + 16 = 25. Así se obtiene r² = 25, de donde el radio es r = 5. Este valor indica cuántas unidades mide el radio de la circunferencia.';  
+};
+
+document.getElementById('hotspot6').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 6: Ecuación ordinaria';  
+    document.getElementById('texto-info').textContent = 'Se usa la ecuación ordinaria de la circunferencia (x − h)² + (y − k)² = r². Se sustituyen h = 2, k = −1 y r² = 25, obteniendo: (x − 2)² + (y + 1)² = 25.';  
+};
+
+document.getElementById('hotspot7').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 7: Desarrollo de binomios';  
+    document.getElementById('texto-info').textContent = 'Se desarrollan los binomios al cuadrado: (x − 2)² = x² − 4x + 4 y (y + 1)² = y² + 2y + 1. Sustituyendo se obtiene: x² − 4x + 4 + y² + 2y + 1 = 25.';  
+};
+
+document.getElementById('hotspot8').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 8: Pasar todo a un solo lado';  
+    document.getElementById('texto-info').textContent = 'Se pasan todos los términos al mismo lado de la igualdad restando 25 para dejar la ecuación igualada a cero: x² − 4x + 4 + y² + 2y + 1 − 25 = 0.';  
+};
+
+document.getElementById('hotspot9').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 9: Reducción de términos semejantes';  
+    document.getElementById('texto-info').textContent = 'Se suman las constantes: 4 + 1 − 25 = −20. Finalmente se obtiene la ecuación en forma general: x² + y² − 4x + 2y − 20 = 0.';  
+};
+
+document.getElementById('hotspot10').onclick = function() {  
+    document.getElementById('titulo-info').textContent = 'Paso 10: Información sobre la gráfica';  
+    document.getElementById('texto-info').textContent = 'La gráfica representa una circunferencia cuyo centro es el punto C(2, −1). Esto significa que el punto desde el que se dibuja el círculo está 2 unidades a la derecha y 1 unidad hacia abajo del origen.'
+'El radio mide 5 unidades, ya que la circunferencia pasa por el punto P(5, 3), el cual está exactamente a esa distancia del centro. Todos los puntos del dibujo cumplen la ecuación'
+'x² + y² − 4x + 2y − 20 = 0, lo que confirma que se trata de una circunferencia correctamente trazada.';  
+};
+
+    document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'img/hotspot-cursor.png');
+    };
+
+ document.getElementById('prueba').onclick = function(){
+
+alert(
+"🎯 BIENVENIDO A LA PRUEBA DE CONOCIMIENTOS SOBRE LA CIRCUNFERENCIA\n\n" +
+"Responderás 5 preguntas relacionadas con el interactivo.\n\n" +
+"📌 INSTRUCCIONES IMPORTANTES:\n\n" +
+"• Lee cuidadosamente cada pregunta.\n" +
+"• Escribe las respuestas de forma clara.\n" +
+"• No agregues palabras adicionales si no se solicitan.\n" +
+"• Respeta los signos matemáticos cuando aparezcan.\n" +
+"• Las mayúsculas y minúsculas no afectan la calificación.\n\n" +
+"📝 EJEMPLOS DE FORMATO:\n\n" +
+"Si la respuesta es un número:\n" +
+"Ejemplo: 8\n\n" +
+"Si la respuesta es un punto en el plano:\n" +
+"Ejemplo: (4,3)\n\n" +
+"Si la respuesta es una ecuación:\n" +
+"Ejemplo: x²+y²-6x+4y-12=0\n\n" +
+"Si la respuesta es el nombre de una fórmula:\n" +
+"Ejemplo: fórmula de distancia\n\n" +
+"🏆 Obtén al menos 3 respuestas correctas para aprobar."
+);
+
+alert("¡Mucho éxito! 🍀");
+
+let puntaje = 0;
+
+let pregunta1 = prompt("1. ¿Cuál es el centro de la circunferencia del ejemplo?");
+if(pregunta1 && pregunta1.trim().toLowerCase() === "(2,-1)"){
+    puntaje++;
+}
+
+let pregunta2 = prompt("2. ¿Cuánto mide el radio?");
+if(pregunta2 && pregunta2.trim() === "5"){
+    puntaje++;
+}
+
+let pregunta3 = prompt("3. ¿Qué fórmula se utiliza para calcular el radio?");
+if(pregunta3 && pregunta3.toLowerCase().includes("distancia")){
+    puntaje++;
+}
+
+let pregunta4 = prompt("4. ¿Cuál es la ecuación ordinaria de una circunferencia?");
+if(pregunta4 && pregunta4.toLowerCase().includes("(x-h)²")){
+    puntaje++;
+}
+
+let pregunta5 = prompt("5. ¿Cuál es la ecuación general obtenida?");
+if(pregunta5 && pregunta5.replace(/\s/g,'').toLowerCase() === "x²+y²-4x+2y-20=0"){
+    puntaje++;
+}
+
+document.getElementById("calif").textContent = puntaje + "/5";
+document.getElementById("resultado").className = "visible";
+
+if(puntaje >= 3){
+
+    document.getElementById("imagen-resultado").style.display = "block";
+
+    alert("🏆 ¡Excelente! Obtuviste " + puntaje + "/5");
+
+    confetti({
+      particleCount: 150,
+      spread: 120,
+      origin: { y: 0.6 }
+    });
+
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 180
+      });
+    }, 500);
+
+}else{
+
+    alert("📚 Obtuviste " + puntaje + "/5. Sigue practicando.");
+}
+};
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    Diego Fernando Rojas Ortiz.
+    <br>
+    Anel Regina Soto Nieves.
+    <br>
+    Vanessa Ayala Díaz 
+    <br>
+    Amaya Rodriguez Ana Cristina 
+</body>
